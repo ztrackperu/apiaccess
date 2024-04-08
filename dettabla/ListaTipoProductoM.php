@@ -12,7 +12,7 @@ ini_set('memory_limit', '-1');
 //$variable = $_GET['data'];
 //$data =  "ola desde servidor ".$variable;
 
-echo  json_encode($data);
+//echo  json_encode($data);
 error_reporting(E_ALL);
 ini_set('memory_limit', '-1');
 //require_once '../models/principal.php';
