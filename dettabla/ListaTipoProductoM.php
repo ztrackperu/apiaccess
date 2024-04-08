@@ -9,8 +9,8 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 ini_set('memory_limit', '-1');
 
-$variable = $_GET['data'];
-$data =  "ola desde servidor ".$variable;
+//$variable = $_GET['data'];
+//$data =  "ola desde servidor ".$variable;
 
 echo  json_encode($data);
 error_reporting(E_ALL);
@@ -40,7 +40,7 @@ try {
 }
 $total =[];
 //depuracion para obtener C_NUMITM ,C_DESITM
-$cursor  = $client->$intranet->dettabla->find(array('c_codtab'=>'CLP'),array('projection' => array('C_NUMITM'=> 1, 'C_DESITM' => 1),'sort'=>array('_id'=>-1),'limit'=>50000));
+$cursor  = $client->intranet->dettabla->find(array('c_codtab'=>'CLP'),array('projection' => array('C_NUMITM'=> 1, 'C_DESITM' => 1),'sort'=>array('_id'=>-1),'limit'=>50000));
 
 foreach ($cursor as $document) {
     array_unshift($total,$document);
