@@ -11,6 +11,8 @@ ini_set('memory_limit', '-1');
 $datosRecibidos = file_get_contents("php://input");
 $recepcion_externa = json_decode($datosRecibidos);
 $sql = $recepcion_externa->sql;
+ini_set('memory_limit', '-1');
+require '../mongodb/mongo.php';
 $cursorW  = client->invmae->insertOne($sql);
 $men["data"]=[];
 if ($cursorW) {
