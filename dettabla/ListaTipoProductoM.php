@@ -42,7 +42,7 @@ $total =[];
 //depuracion para obtener C_NUMITM ,C_DESITM
 //$cursor  = $client->intranet->dettabla->find(array('C_CODTAB'=>'CLP'),array('projection' => array('C_NUMITM'=> 1, 'C_DESITM' => 1),'sort'=>array('_id'=>-1),'limit'=>50000));
 //$cursor  = $client->intranet->dettabla->find(array(),array('projection' => array('_id'=>0,'C_NUMITM'=> 1, 'C_DESITM' => 1,'c_codtab' => 1),'sort'=>array('_id'=>-1),'limit'=>50000));
-$cursor  = $client->intranet->dettabla->find();
+$cursor  = $client->intranet->dettabla->find(array('C_CODTAB'=>'CLP'),array('projection' => array('_id'=>0,'C_NUMITM'=> 1, 'C_DESITM' => 1,'c_codtab' => 1),'sort'=>array('_id'=>-1),'limit'=>50000));
 
 foreach ($cursor as $document) {
     if($document['C_CODTAB']=='CLP'){
