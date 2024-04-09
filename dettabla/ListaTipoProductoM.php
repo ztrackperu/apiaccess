@@ -45,9 +45,9 @@ $total =[];
 $cursor  = $client->intranet->dettabla->find(array('C_CODTAB' => 'CLP'),array('projection' => array('_id'=>0,'C_NUMITM'=> 1, 'C_DESITM' => 1,'C_CODTAB' => 1),'sort'=>array('_id'=>-1),'limit'=>50000));
 
 foreach ($cursor as $document) {
-    if($document['C_CODTAB']=='CLP'){
+    //if($document['C_CODTAB']=='CLP'){
         array_unshift($total,$document);
-    }
+    //}
 }
 echo json_encode($total);
 
