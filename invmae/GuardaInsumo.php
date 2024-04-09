@@ -11,7 +11,15 @@ ini_set('memory_limit', '-1');
 $datosRecibidos = file_get_contents("php://input");
 $recepcion_externa = json_decode($datosRecibidos);
 $sql = $recepcion_externa->sql;
-echo json_encode($sql);
+$cursorW  = client->invmae->insertOne($sql);
+$men["data"]=[];
+if ($cursorW) {
+    $men["data"]=" se guardo el dato";
+} else {
+    $men["data"]="problemas";
+
+}
+echo json_encode($men);
 //$variable = $_GET['data'];
 //$data =  "ola desde servidor ".$variable;
 
