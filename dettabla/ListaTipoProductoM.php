@@ -41,12 +41,13 @@ try {
 $total =[];
 //depuracion para obtener C_NUMITM ,C_DESITM
 //$cursor  = $client->intranet->dettabla->find(array('c_codtab'=>'CLP'),array('projection' => array('C_NUMITM'=> 1, 'C_DESITM' => 1),'sort'=>array('_id'=>-1),'limit'=>50000));
-$cursor  = $client->intranet->dettabla->find(array(),array('projection' => array('_id'=>0,'C_NUMITM'=> 1, 'C_DESITM' => 1,'c_codtab' => 1),'sort'=>array('_id'=>-1),'limit'=>50000));
+//$cursor  = $client->intranet->dettabla->find(array(),array('projection' => array('_id'=>0,'C_NUMITM'=> 1, 'C_DESITM' => 1,'c_codtab' => 1),'sort'=>array('_id'=>-1),'limit'=>50000));
+$cursor  = $client->intranet->dettabla->find();
 
 foreach ($cursor as $document) {
-    if($document['c_codtab']=='CLP'){
+    //if($document['c_codtab']=='CLP'){
         array_unshift($total,$document);
-    }
+    //}
 }
 echo json_encode($total);
 
