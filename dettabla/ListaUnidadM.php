@@ -10,7 +10,7 @@ error_reporting(E_ALL);
 ini_set('memory_limit', '-1');
 require '../mongodb/mongo.php';
 $total =[];
-$cursor  = client->intranet->TAB_UNID->find(array(),array('projection' => array('_id'=>0,'TU_CODI'=> 1, 'TU_DESC' => 1),'sort'=>array('_id'=>-1)));
+$cursor  = client->intranet->tab_unid->find(array(),array('projection' => array('_id'=>0,'TU_CODI'=> 1, 'TU_DESC' => 1),'sort'=>array('_id'=>-1)));
 foreach ($cursor as $document) {
     array_unshift($total,$document);
 }
