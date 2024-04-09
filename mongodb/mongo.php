@@ -6,7 +6,7 @@ require '../../ztotal/vendor/autoload.php';
 use MongoDB\Client;
 use MongoDB\Driver\ServerApi;
 use MongoDB\BSON\UTCDateTime ;
-use MongoDB\BSON\Regex ;
+//use MongoDB\BSON\Regex;
 
 const uri = 'mongodb://localhost:27017';
 // Specify Stable API version 1
