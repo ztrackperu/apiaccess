@@ -10,8 +10,8 @@ error_reporting(E_ALL);
 ini_set('memory_limit', '-1');
 require '../mongodb/mongo.php';
 $total =[];
-use MongoDB\BSON\Regex;
-$regexObj = new Regex("/^INDND/");
+
+$regexObj =  new MongoDB\BSON\Regex ( '^INDND');
 //db.invmae.find({"IN_CODI": /^INDND/}).sort({"IN_CODI":-1}).projection({'_id':0,"IN_CODI":1}).limit(1)
 $cursor  = client->intranet->invmae->find(array("IN_CODI" => $regexObj),array('projection' => array('_id'=>0,'IN_CODI'=> 1),'sort'=>array('_id'=>-1),'limit'=> 1));
 foreach ($cursor as $document) {
