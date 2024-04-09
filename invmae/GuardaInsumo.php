@@ -13,7 +13,7 @@ $recepcion_externa = json_decode($datosRecibidos);
 $sql = $recepcion_externa->sql;
 ini_set('memory_limit', '-1');
 require '../mongodb/mongo.php';
-$cursorW  = client->invmae->insertOne($sql);
+$cursorW  = client->intranet->invmae->insertOne($sql);
 $men["data"]=[];
 if ($cursorW) {
     $men["data"]=" se guardo el dato";
